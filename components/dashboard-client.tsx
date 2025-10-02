@@ -4,6 +4,7 @@
 import { useUser } from "@clerk/nextjs";
 import ConnectButton from "@/components/connect-stripe";
 import RevenueChart from "@/components/revenue-chart";
+import Link from "next/link";
 
 interface DashboardClientProps {
 	transactions: { date: string; amount: number; status: string }[];
@@ -22,6 +23,7 @@ export default function DashboardClient({transactions, balance, payouts}: Dashbo
 		<div className='min-h-screen bg-gray-900 text-white p-4'>
 			<h1 className='text-2xl font-bold mb-4'>Welcome, {user?.firstName}</h1>
 			<ConnectButton />
+            <Link href='/' className='text-blue-400 underline mt-4 inline-block'>Home</Link>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
 				<div>
 					<h2 className='text-xl font-semibold mb-2'>Balance</h2>

@@ -19,6 +19,8 @@ export default async function Dashboard() {
 	);
 	const { transactions, balance, payouts } = await response.json();
     console.log(transactions)
+    console.log(balance)
+    console.log(payouts)
 
 	return (
 		<DashboardClient
